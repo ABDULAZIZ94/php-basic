@@ -17,3 +17,5 @@
     }else{
         echo "Table created successfully<br>";
     }
+
+    header("Location: ../index.html");
