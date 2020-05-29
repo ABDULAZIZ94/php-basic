@@ -34,10 +34,18 @@
   </form>
 
   <h1 class="banner_word">Insert Row</h1>
-  <form >
+  <form action="php/insertrow.php" method="POST">
     <div class="form-group row">
-      <label class="col-sm-2">ID</label>
-      <input class="col-sm-10" name="id">
+      <label class="col-sm-2">TABLE</label>
+      <input class="col-sm-10" name="table_name">
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-2">No</label>
+      <input class="col-sm-10" name="hadith_no">
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-2">Page</label>
+      <input class="col-sm-10" name="page">
     </div>
     <div class="form-group row">
       <label class="col-sm-2">Hadith</label>

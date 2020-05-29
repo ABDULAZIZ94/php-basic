@@ -22,14 +22,16 @@
   </ul>
   <h1 class="banner_word">Delete Table</h1>
   <hr>
-  <form>
+  <form action="php/deletetable.php" method="POST">
     <label>Table Name</label>
     <input name="table_name">
     <input type="submit" value="delete">
   </form>
   <h1 class="banner_word">Delete Row</h1>
   <hr>
-  <form>
+  <form action="php/deleterow.php" method="POST">
+    <label>Table Name</label>
+    <input name="table_name">
     <label>Row ID</label>
     <input name="row_id">
     <input type="submit" value="delete">

@@ -2,10 +2,9 @@
   include "connection.php";
 
   if($_SERVER["REQUEST_METHOD"]=="POST"){
-    $ID = $_POST["row_id"];
     $TABLE = $_POST["table_name"];
     $sql =<<< EOL
-      DELETE from '$TABLE' where ID = '$ID';
+      DROP TABLE '$TABLE';
     EOL;
 
     $ret = $db->exec($sql);

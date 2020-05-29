@@ -1,15 +1,24 @@
 <?php
     include "connection.php";
 
-    $sql =<<< EOF
-    INSERT INTO HADITH ( hadith_no, page, hadith_text)
-    VALUES ( 1, 1, "la ilaha illa allah muhammada rasulu allah")
-    EOF;
+    if($_SERVER["REQUEST_METHOD"]=="POST"){
+        $TABLE = $_POST["table_name"];
+        $NO = $_POST["hadith_no"];
+        $PAGE = $_POST["page"];
+        $TEXT = $_POST["hadith_text"];
 
-    $ret = $db->exec($sql);
-    if(!$ret){
-        echo $db->lastErrorMsg();
-    }else{
-        echo "Records created successfuly";
+        $sql =<<< EOF
+        INSERT INTO '$TABLE' ( hadith_no, page, hadith_text)
+        VALUES ( $NO, $PAGE, "$TEXT")
+        EOF;
+
+        $ret = $db->exec($sql);
+        if(!$ret){
+            echo $db->lastErrorMsg();
+        }else{
+            echo "Records created successfuly";
+        }
+        $db->close();
     }
-    $db->close();
+
+    
