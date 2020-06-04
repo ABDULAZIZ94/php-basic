@@ -17,9 +17,7 @@ $debugbarRenderer = $debugbar->getJavascriptRenderer();
     $sql =<<< EOF
       SELECT * FROM $TABLE;
     EOF;
-    var_dump($sql);
-    // $debug_level = MEMORY_TRACE;
-    // apd_breakpoint ( int $debug_level );
+    // var_dump($sql);
     $ret = $db->query($sql);
     echo "<table>";
     echo "<tr><th>ID</th><th>Hadith Text</th></tr>";
