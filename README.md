@@ -40,3 +40,7 @@ implement this snipped
             <?php echo $debugbarRenderer->render() ?>
         </body>
     </html>
+# debugger
+xdebug
+/etc/php/7.4/cli/php.ini
+/etc/php/7.1/mods-available/*.ini
