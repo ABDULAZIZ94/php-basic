@@ -46,3 +46,7 @@ xdebug
 /etc/php/7.4/cli/php.ini
 /etc/php/7.1/mods-available/*.ini
 sudo apt install php-xdebug;
+
+on windows
+As default xdeubg is no enabled on xampp but it has xdebug.dll file.
+If you need xdebug you can easily enable xdebug on your xampp.
