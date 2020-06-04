@@ -1,4 +1,13 @@
 <?php
+
+// Require the Composer autoloader, if not already loaded
+require '../vendor/autoload.php';
+
+use DebugBar\StandardDebugBar;
+
+$debugbar = new StandardDebugBar();
+$debugbarRenderer = $debugbar->getJavascriptRenderer();
+
   include "connection.php";
 
   if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -8,7 +17,9 @@
     $sql =<<< EOF
       SELECT * FROM $TABLE;
     EOF;
- 
+    var_dump($sql);
+    // $debug_level = MEMORY_TRACE;
+    // apd_breakpoint ( int $debug_level );
     $ret = $db->query($sql);
     echo "<table>";
     echo "<tr><th>ID</th><th>Hadith Text</th></tr>";
@@ -24,6 +35,15 @@
   }else{
     echo "Unsuported Method<br>";
   }
-
-
+  
+?>
+<html>
+    <head>
+        <?php echo $debugbarRenderer->renderHead() ?>
+    </head>
+    <body>
+        ...
+        <?php echo $debugbarRenderer->render() ?>
+    </body>
+</html>
     
