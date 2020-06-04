@@ -46,3 +46,15 @@ xdebug
 /etc/php/7.4/cli/php.ini
 /etc/php/7.1/mods-available/*.ini
 sudo apt install php-xdebug;
+
+configure xdebug.ini
+    [xdebug]
+    zend_extension=xdebug.so
+    xdebug.remote_autostart=1
+    xdebug.remote_log=/var/log/apache2/xdebug.log
+    xdebug.default_enable = 1
+    xdebug.remote_enable=1
+    xdebug.remote_port=9000
+
+donot use this confugiration
+    ;xdebug.remote_connect_back=1 
